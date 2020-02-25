@@ -5,19 +5,25 @@ using UnityEngine;
 public class DemandsHandler : MonoBehaviour
 {
     [SerializeField] GameObject _demandsPrefab;
-    [SerializeField] List<GameObject> _elements;
+    [SerializeField] int _maxDemands;
+
+    private List<Demand> _demands;
+    
 
     private void Start()
     {
-        
+        _demands = new List<Demand>();
+
+        AddDemandOnList();
     }
 
-    private void PopulateDemand()
+    public void AddDemandOnList()
     {
-        int numberOfElements = Random.Range(1, 3);
-        for (int i = 0; i < numberOfElements; i++)
+        if (_demands.Count < _maxDemands)
         {
-            _elements[i].SetActive(true);
-        }    
+            Demand demand;
+            demand = Instantiate(_demandsPrefab, this.gameObject.transform).GetComponent<Demand>();
+            _demands.Add(demand);
+        }
     }
 }
