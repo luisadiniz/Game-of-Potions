@@ -33,10 +33,6 @@ public class Demand : MonoBehaviour
 
     private void SetElementsValue(int index)
     {
-        _redValue = 0;
-        _greenValue = 0;
-        _blueValue = 0;
-
         if (index == 0)
         {
             _redValue = Random.Range(1, 4);
