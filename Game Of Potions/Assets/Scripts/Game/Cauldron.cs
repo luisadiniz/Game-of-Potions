@@ -56,7 +56,19 @@ public class Cauldron : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void OnPointerUp(PointerEventData pointerEventData)
     {
-        _newPotion.GetComponent<Potion>().DropPotion(_redValue, _greenValue, _blueValue);
+        _newPotion.GetComponent<Potion>().DropPotion(_redValue, _greenValue, _blueValue, this);
         Destroy(_newPotion);
+    }
+
+    public void ResetCauldron()
+    {
+        _redValue = 0;
+        _greenValue = 0;
+        _blueValue = 0;
+
+        _redValueText.text = _redValue.ToString();
+        _greenValueText.text = _greenValue.ToString();
+        _blueValueText.text = _blueValue.ToString();
+
     }
 }

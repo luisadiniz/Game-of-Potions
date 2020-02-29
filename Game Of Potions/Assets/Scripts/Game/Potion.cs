@@ -32,10 +32,13 @@ public class Potion : MonoBehaviour
         }
     }
 
-    public void DropPotion(int red, int green, int blue)
+    public void DropPotion(int red, int green, int blue, Cauldron cauldron)
     {
-        if(_demand != null)
+        if (_demand != null)
+        {
             _demand.OnPotionDrop(red, green, blue);
+            cauldron.ResetCauldron();
+        }
     }
 
 }
