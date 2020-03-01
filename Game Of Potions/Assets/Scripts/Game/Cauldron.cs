@@ -69,6 +69,5 @@ public class Cauldron : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         _redValueText.text = _redValue.ToString();
         _greenValueText.text = _greenValue.ToString();
         _blueValueText.text = _blueValue.ToString();
-
     }
 }

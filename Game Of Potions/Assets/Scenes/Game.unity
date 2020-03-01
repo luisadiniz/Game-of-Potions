@@ -196,7 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _demandsPrefab: {fileID: 7074210789546196136, guid: 2dbe0bb0f76ba8f49be83bac59545392,
     type: 3}
-  _maxDemands: 7
+  _maxDemands: 50
 --- !u!1 &327974692
 GameObject:
   m_ObjectHideFlags: 0
