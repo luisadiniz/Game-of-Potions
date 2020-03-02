@@ -30,6 +30,7 @@ public class DemandsHandler : MonoBehaviour
             Demand demand;
             demand = Instantiate(_demandsPrefab, this.gameObject.transform).GetComponent<Demand>();
             _demands.Add(demand);
+            demand.DemandsHandler = this.GetComponent<DemandsHandler>();
         }
     }
 

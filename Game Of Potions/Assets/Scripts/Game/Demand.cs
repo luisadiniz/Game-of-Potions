@@ -5,15 +5,17 @@ using TMPro;
 
 public class Demand : MonoBehaviour
 {
+    public DemandsHandler DemandsHandler;
+
     [SerializeField] List<GameObject> _elements;
     [SerializeField] TextMeshProUGUI _redValueText;
     [SerializeField] TextMeshProUGUI _greenValueText;
     [SerializeField] TextMeshProUGUI _blueValueText;
-    [SerializeField] DemandsHandler _demandsHandler;
 
     private int _redValue = 0;
     private int _greenValue = 0;
     private int _blueValue = 0;
+
 
     private void Start()
     {
@@ -68,7 +70,7 @@ public class Demand : MonoBehaviour
 
         if (_redValue <= 0 && _greenValue <=0 && _blueValue <= 0)
         {
-            _demandsHandler.GetElementDestroyed(this);
+            DemandsHandler.GetElementDestroyed(this);
             Destroy(this.gameObject);
         }
     }
