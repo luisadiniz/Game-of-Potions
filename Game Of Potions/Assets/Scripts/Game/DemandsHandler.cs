@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class DemandsHandler : MonoBehaviour
@@ -19,9 +20,11 @@ public class DemandsHandler : MonoBehaviour
 
     public void AddDemandOnList()
     {
-        if (_demands.Count == 7 && _demands[6] != null)
+        Debug.Log(_demands.Count);
+        if (_demands.Count >= 7)
         {
             Debug.LogError("GAME OVER!!");
+            SceneManager.LoadScene("GameOver");
         }
         else if (_demands.Count < _maxDemands)
         {
@@ -33,6 +36,6 @@ public class DemandsHandler : MonoBehaviour
 
     public void GetElementDestroyed(Demand demand)
     {
-        _demands[_demands.IndexOf(demand)] = null;
+        _demands.Remove(demand);
     }
 }
