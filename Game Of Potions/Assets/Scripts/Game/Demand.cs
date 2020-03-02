@@ -9,6 +9,7 @@ public class Demand : MonoBehaviour
     [SerializeField] TextMeshProUGUI _redValueText;
     [SerializeField] TextMeshProUGUI _greenValueText;
     [SerializeField] TextMeshProUGUI _blueValueText;
+    [SerializeField] DemandsHandler _demandsHandler;
 
     private int _redValue = 0;
     private int _greenValue = 0;
@@ -67,6 +68,7 @@ public class Demand : MonoBehaviour
 
         if (_redValue <= 0 && _greenValue <=0 && _blueValue <= 0)
         {
+            _demandsHandler.GetElementDestroyed(this);
             Destroy(this.gameObject);
         }
     }

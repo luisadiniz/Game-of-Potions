@@ -19,11 +19,20 @@ public class DemandsHandler : MonoBehaviour
 
     public void AddDemandOnList()
     {
-        if (_demands.Count < _maxDemands)
+        if (_demands.Count == 7 && _demands[6] != null)
+        {
+            Debug.LogError("GAME OVER!!");
+        }
+        else if (_demands.Count < _maxDemands)
         {
             Demand demand;
             demand = Instantiate(_demandsPrefab, this.gameObject.transform).GetComponent<Demand>();
             _demands.Add(demand);
         }
+    }
+
+    public void GetElementDestroyed(Demand demand)
+    {
+        _demands[_demands.IndexOf(demand)] = null;
     }
 }
