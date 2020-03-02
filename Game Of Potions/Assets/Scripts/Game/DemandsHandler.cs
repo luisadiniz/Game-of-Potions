@@ -20,7 +20,6 @@ public class DemandsHandler : MonoBehaviour
 
     public void AddDemandOnList()
     {
-        Debug.Log(_demands.Count);
         if (_demands.Count >= 7)
         {
             Debug.LogError("GAME OVER!!");
