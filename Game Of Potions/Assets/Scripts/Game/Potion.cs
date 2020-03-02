@@ -26,7 +26,7 @@ public class Potion : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collider)
     {
-        if (collider.tag == "Demand")
+        if (collider.tag == "Demand" && _demand == collider.GetComponent<Demand>())
         {
             _demand = null;
         }

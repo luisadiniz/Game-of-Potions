@@ -52,7 +52,7 @@ public class Card : MonoBehaviour, IDragHandler, IEndDragHandler
 
     void OnTriggerExit2D(Collider2D collider)
     {
-        if (collider.tag == "Cauldron")
+        if (collider.tag == "Cauldron" && _cauldron == collider.GetComponent<Cauldron>())
         {
             _cauldron = null;
         }
